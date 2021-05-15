@@ -19,11 +19,8 @@ async def on_message(message):
         msg = message.content
         b = TextBlob(msg)
         dupa = b.detect_language()
-        print(msg)
         if dupa == 'lt':
-            print("lituna")
             translated = translator.translate(msg, lang_tgt='pl', lang_src='lt')
-            print(translated)
             embed = CreateEmbed(msg, translated)
             await message.channel.send(embed=embed)
 
