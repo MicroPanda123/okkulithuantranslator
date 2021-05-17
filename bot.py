@@ -19,17 +19,17 @@ async def on_message(message):
         msg = message.content
         b = TextBlob(msg)
         dupa = b.detect_language()
-        if dupa == 'lt':
-            translated = translator.translate(msg, lang_tgt='pl', lang_src='lt')
+        if dupa != 'pl' or dupa != 'en' or not('http' in dupa):
+            translated = translator.translate(msg, lang_tgt='pl')
             embed = CreateEmbed(msg, translated)
             await message.channel.send(embed=embed)
 
 def CreateEmbed(original, translated):
     embed = discord.Embed( 
-            title="Lituanski",
-        description=f"Jakis lituanin powiedzial cos (Tak wiem ze jestem hujowy to przez api <:troll4k:759121764030087189> )",
+            title="Jenzyk",
+        description=f"Hinole jebane gadajom po innych jenzykow(Tak wiem ze jestem hujowy to przez api <:troll4k:759121764030087189> )",
         colour=discord.Colour.dark_blue())
-    embed.add_field(name=f'Tlumacz: {translated}', value=f'Lituanski: {original}')
+    embed.add_field(name=f'Tlumacz: {translated}', value=f'Oridzinal: {original}')
     return embed
 
 client.run(TOKEN)
