@@ -19,7 +19,7 @@ async def on_message(message):
         msg = message.content
         b = TextBlob(msg)
         dupa = b.detect_language()
-        if dupa != 'pl' or dupa != 'en' or not('http' in dupa):
+        if (dupa != 'pl' or dupa != 'en') and not('http' in dupa):
             translated = translator.translate(msg, lang_tgt='pl')
             embed = CreateEmbed(msg, translated)
             await message.channel.send(embed=embed)
