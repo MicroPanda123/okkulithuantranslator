@@ -26,8 +26,8 @@ async def on_message(message):
 
 def CreateEmbed(original, translated):
     embed = discord.Embed( 
-            title="Jenzyk",
-        description=f"Hinole jebane gadajom po innych jenzykow(Tak wiem ze jestem hujowy to przez api <:troll4k:759121764030087189> )",
+            title="Litwinski",
+        description=f"Litwini gadajo i ja nie rozumiem to ja tlumacze(Tak wiem ze jestem hujowy to przez api <:troll4k:759121764030087189>)",
         colour=discord.Colour.dark_blue())
     embed.add_field(name=f'Tlumacz: {translated}', value=f'Oridzinal: {original}')
     return embed
